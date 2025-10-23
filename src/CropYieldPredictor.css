@@ -1,0 +1,494 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Ensure html and body take full height */
+html, body, #root {
+  
+ 
+  background: linear-gradient(to bottom, #1a5f1a, #0d3d0d);
+}
+
+.crop-yield-predictor {
+  background: linear-gradient(to bottom, #1a5f1a, #0d3d0d);
+  color: #333;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Advanced grass animation layers */
+.grass-background {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.grass-layer-1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(to top, #1a5f1a, #2d8b2d);
+  clip-path: polygon(
+    0% 100%, 5% 85%, 10% 90%, 15% 75%, 20% 95%, 25% 80%, 
+    30% 85%, 35% 70%, 40% 90%, 45% 75%, 50% 100%, 55% 85%, 
+    60% 95%, 65% 80%, 70% 90%, 75% 65%, 80% 85%, 85% 70%, 
+    90% 95%, 95% 80%, 100% 100%
+  );
+  animation: waveGrass 8s ease-in-out infinite;
+  opacity: 0.8;
+}
+
+.grass-layer-2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(to top, #2d8b2d, #3caa3c);
+  clip-path: polygon(
+    0% 100%, 3% 90%, 6% 95%, 9% 85%, 12% 98%, 15% 88%, 
+    18% 92%, 21% 82%, 24% 96%, 27% 86%, 30% 100%, 33% 90%, 
+    36% 94%, 39% 84%, 42% 97%, 45% 87%, 48% 91%, 51% 81%, 
+    54% 95%, 57% 85%, 60% 99%, 63% 89%, 66% 93%, 69% 83%, 
+    72% 97%, 75% 87%, 78% 91%, 81% 81%, 84% 95%, 87% 85%, 
+    90% 98%, 93% 88%, 96% 92%, 99% 82%, 100% 100%
+  );
+  animation: waveGrass 6s ease-in-out infinite 1s;
+  opacity: 0.7;
+}
+
+.grass-layer-3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(to top, #3caa3c, #4CAF50);
+  clip-path: polygon(
+    0% 100%, 2% 92%, 4% 97%, 6% 88%, 8% 99%, 10% 90%, 
+    12% 94%, 14% 85%, 16% 98%, 18% 89%, 20% 100%, 22% 91%, 
+    24% 95%, 26% 86%, 28% 97%, 30% 88%, 32% 92%, 34% 83%, 
+    36% 96%, 38% 87%, 40% 99%, 42% 90%, 44% 94%, 46% 85%, 
+    48% 97%, 50% 88%, 52% 92%, 54% 83%, 56% 95%, 58% 86%, 
+    60% 98%, 62% 89%, 64% 93%, 66% 84%, 68% 96%, 70% 87%, 
+    72% 91%, 74% 82%, 76% 94%, 78% 85%, 80% 97%, 82% 88%, 
+    84% 92%, 86% 83%, 88% 95%, 90% 86%, 92% 98%, 94% 89%, 
+    96% 93%, 98% 84%, 100% 100%
+  );
+  animation: waveGrass 4s ease-in-out infinite 2s;
+  opacity: 0.6;
+}
+
+/* Grass animation keyframes */
+@keyframes waveGrass {
+  0%, 100% { 
+    transform: skewX(0deg) translateX(0);
+    clip-path: polygon(
+      0% 100%, 5% 85%, 10% 90%, 15% 75%, 20% 95%, 25% 80%, 
+      30% 85%, 35% 70%, 40% 90%, 45% 75%, 50% 100%, 55% 85%, 
+      60% 95%, 65% 80%, 70% 90%, 75% 65%, 80% 85%, 85% 70%, 
+      90% 95%, 95% 80%, 100% 100%
+    );
+  }
+  25% { 
+    transform: skewX(1deg) translateX(5px);
+    clip-path: polygon(
+      0% 100%, 5% 80%, 10% 95%, 15% 70%, 20% 90%, 25% 85%, 
+      30% 80%, 35% 75%, 40% 85%, 45% 80%, 50% 95%, 55% 90%, 
+      60% 85%, 65% 85%, 70% 85%, 75% 70%, 80% 80%, 85% 75%, 
+      90% 90%, 95% 85%, 100% 100%
+    );
+  }
+  50% { 
+    transform: skewX(0deg) translateX(0);
+    clip-path: polygon(
+      0% 100%, 5% 90%, 10% 85%, 15% 80%, 20% 100%, 25% 75%, 
+      30% 90%, 35% 65%, 40% 95%, 45% 70%, 50% 90%, 55% 80%, 
+      60% 100%, 65% 75%, 70% 95%, 75% 60%, 80% 90%, 85% 65%, 
+      90% 100%, 95% 75%, 100% 100%
+    );
+  }
+  75% { 
+    transform: skewX(-1deg) translateX(-5px);
+    clip-path: polygon(
+      0% 100%, 5% 85%, 10% 80%, 15% 85%, 20% 90%, 25% 75%, 
+      30% 95%, 35% 70%, 40% 85%, 45% 80%, 50% 100%, 55% 75%, 
+      60% 90%, 65% 85%, 70% 80%, 75% 70%, 80% 95%, 85% 65%, 
+      90% 85%, 95% 90%, 100% 100%
+    );
+  }
+}
+
+/* Individual grass blades */
+.grass-blades {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 250px;
+  pointer-events: none;
+}
+
+.grass-blade {
+  position: absolute;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to top, transparent, #4a7c4a, #3a6b3a);
+  border-radius: 2px 2px 0 0;
+  transform-origin: bottom center;
+  animation: bladeSway 3s ease-in-out infinite;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes bladeSway {
+  0%, 100% { 
+    transform: rotate(0deg) scaleY(1);
+    filter: hue-rotate(0deg);
+  }
+  25% { 
+    transform: rotate(8deg) scaleY(1.1);
+    filter: hue-rotate(5deg);
+  }
+  50% { 
+    transform: rotate(0deg) scaleY(1.05);
+    filter: hue-rotate(0deg);
+  }
+  75% { 
+    transform: rotate(-8deg) scaleY(1.1);
+    filter: hue-rotate(-5deg);
+  }
+}
+
+/* Container and layout */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 10;
+  margin-top: 30px;
+  border: 1px solid #2d5a2d;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #4CAF50;
+  font-size: 2.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* New Full Width Layout */
+.app-layout-full {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.input-results-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.results-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Form Section */
+.form-section {
+  background: rgba(30, 30, 30, 0.9);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.form-section h2 {
+  color: #4CAF50;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #2d5a2d;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #4CAF50;
+  font-size: 0.95rem;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #2d5a2d;
+  border-radius: 6px;
+  background: #1a1a1a;
+  color: white;
+  transition: all 0.3s;
+  font-size: 1rem;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.input-group input[type="range"] {
+  padding: 8px 0;
+}
+
+.predict-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to bottom, #4caf50, #388e3c);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+.predict-btn:hover {
+  background: linear-gradient(to bottom, #43a047, #2e7d32);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Result Section */
+.result-section {
+  background: rgba(30, 30, 30, 0.9);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.result {
+  background: linear-gradient(to bottom, #c8cb08, #b0b307);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(200, 203, 8, 0.3);
+  color: #333;
+}
+
+.result h2 {
+  color: #2d5a2d;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.result-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.result-label {
+  color: #2d5a2d;
+  font-size: 1rem;
+}
+
+.result-value {
+  color: #1a5f1a;
+  font-size: 1.1rem;
+}
+
+.past-predictions-section {
+  background: rgba(30, 30, 30, 0.9);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.past-predictions-section h2 {
+  color: #4CAF50;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #2d5a2d;
+  text-align: center;
+}
+
+.past-predictions {
+  list-style-type: none;
+}
+
+.past-predictions li {
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: 5px;
+  border-left: 3px solid #4CAF50;
+  color: #e0e0e0;
+  transition: all 0.3s;
+}
+
+.past-predictions li:hover {
+  background: rgba(76, 175, 80, 0.2);
+  transform: translateX(5px);
+}
+
+/* Full Width Chart Section */
+.chart-section-fullwidth {
+  background: linear-gradient(to bottom,#0d3d0d, #1a5f1a);
+  border-radius: 15px;
+  padding: 25px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+.chart-section-fullwidth h2 {
+  color:  #4CAF50;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.chart-container-fullwidth {
+  height: 450px;
+  position: relative;
+  background: rgba(20, 20, 20, 0.7);
+  border-radius: 12px;
+  padding: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  width: 100%;
+}
+
+/* Ensure canvas takes full container */
+.chart-container-fullwidth canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Additional decorative elements */
+.floating-leaves {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.leaf {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #4CAF50;
+  border-radius: 50% 0 50% 0;
+  opacity: 0.3;
+  animation: floatLeaf 15s linear infinite;
+}
+
+@keyframes floatLeaf {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .input-results-panel {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .container {
+    margin: 15px;
+    padding: 15px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .chart-container-fullwidth {
+    height: 400px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .chart-container-fullwidth {
+    height: 350px;
+    padding: 15px;
+  }
+  
+  .chart-section-fullwidth {
+    padding: 20px;
+  }
+  
+  .result-item {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-container-fullwidth {
+    height: 300px;
+    padding: 10px;
+  }
+  
+  .form-section,
+  .result-section,
+  .past-predictions-section {
+    padding: 20px;
+  }
+}
