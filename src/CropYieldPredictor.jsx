@@ -449,6 +449,32 @@ const CropYieldPredictor = () => {
               <canvas ref={chartRef}></canvas>
             </div>
           </div>
+          {/* Footer Section */}
+<footer className="footer-section">
+  <div className="footer-content">
+    <div className="footer-logo">
+      <span className="footer-icon">🌾</span>
+      <h3>Crop Yield Predictor</h3>
+      <p>Harvesting Data for Better Agriculture</p>
+    </div>
+    
+    <div className="footer-links">
+      
+      
+      
+    
+    
+    
+      <div className="footer-copyright">
+        <p>© 2025 Crop Yield Predictor. All rights reserved.</p>
+        <p className="footer-developer">Developed with ❤️ by Monish</p>
+      </div>
+      <div className="footer-disclaimer">
+        <p>Disclaimer: Predictions are based on statistical models and should be used as guidance only.</p>
+      </div>
+    </div>
+  </div>
+</footer>
         </div>
       </div>
     </div>

@@ -492,3 +492,138 @@ h1 {
     padding: 20px;
   }
 }
+/* Footer Section Styles */
+.footer-section {
+  background: linear-gradient(135deg, #1a4721 0%, #0d3b1a 100%);
+  border-top: 3px solid #4CAF50;
+  margin-top: 40px;
+  padding: 40px 0 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #4CAF50, transparent);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.footer-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.footer-logo h3 {
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin: 10px 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.footer-logo p {
+  color: #b0d8b0;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.footer-copyright {
+  color: #b0d8b0;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-developer {
+  color: #4CAF50;
+  font-weight: bold;
+  margin-top: 8px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.footer-developer::before {
+  content: '❤️';
+  font-size: 1.1rem;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.footer-disclaimer {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  font-style: italic;
+  max-width: 600px;
+  margin: 20px auto 0;
+  line-height: 1.4;
+  text-align: center;
+  padding-top: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-section {
+    padding: 30px 0 15px;
+  }
+  
+  .footer-logo h3 {
+    font-size: 1.5rem;
+  }
+  
+  .footer-copyright {
+    font-size: 0.85rem;
+    padding: 15px 0;
+  }
+  
+  .footer-disclaimer {
+    font-size: 0.75rem;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-logo h3 {
+    font-size: 1.3rem;
+  }
+  
+  .footer-logo p {
+    font-size: 0.9rem;
+  }
+  
+  .footer-copyright {
+    font-size: 0.8rem;
+  }
+  
+  .footer-disclaimer {
+    font-size: 0.7rem;
+  }
+}
