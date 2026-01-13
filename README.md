@@ -71,3 +71,6 @@
 
 ### This project combines agricultural science with modern web technologies to create a practical tool for farmers and agricultural planners, making yield prediction accessible and visually engaging.
 ## Output Images
+<img width="1784" height="941" alt="image" src="https://github.com/user-attachments/assets/b4ae5404-e015-4c18-80ee-a84fddf6baa2" />
+<img width="1750" height="998" alt="image" src="https://github.com/user-attachments/assets/ef7585ee-390d-4ee3-8365-53db36eb6246" />
+
